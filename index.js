@@ -1,5 +1,6 @@
 for(var i =0; i<document.querySelectorAll(".drum").length; i++){
 
+    // add eventlistener when click on the drum
     document.querySelectorAll("button")[i].addEventListener("click",function () {
        
         var buttonInnerHTML = this.innerHTML;
@@ -7,6 +8,7 @@ for(var i =0; i<document.querySelectorAll(".drum").length; i++){
         buttonAnimation(buttonInnerHTML);
     });
 
+    //add eventlistner when keypress from keyboard
     document.addEventListener("keypress",function(event){
         makeSound(event.key);
         buttonAnimation(event.key);
@@ -45,6 +47,7 @@ function makeSound(key){
     
 }
 
+//add animation when press the drum
 function buttonAnimation(currentKey){
     var activeButton = document.querySelector("."+currentKey);
     activeButton.classList.add("pressed");
